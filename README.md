@@ -1,3 +1,11 @@
+# Thread safe implementation
+
+Slightly modified version of the original [turblib library](https://github.com/idies/turblib) to ensure thread safety.
+
+The files that has been edited are:
+* turblib.c (usage of a temporary soap structure for each request)
+* README.md (this current file in which this introduction has been added)
+
 # Turblib -- A JHU Turbulence Database Cluster C and Fortran Interface Library
 
 See the end of the file for license conditions.
