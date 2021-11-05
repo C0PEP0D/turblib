@@ -217,13 +217,13 @@ void soapinit() {
 void soapdestroy_() {
 	soap_destroy(&__jhuturbsoap);
 	soap_end(&__jhuturbsoap);
-	soap_done(&__jhuturbsoap);
+	soap_free(&__jhuturbsoap);
 }
 
 void soapdestroy() {
 	soap_destroy(&__jhuturbsoap);
 	soap_end(&__jhuturbsoap);
-	soap_done(&__jhuturbsoap);
+	soap_free(&__jhuturbsoap);
 }
 
 int getVelocity(char *authToken,
@@ -422,7 +422,7 @@ int getVelocitySoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -485,7 +485,7 @@ int getThreshold(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); //  detach the gSOAP environment
+	soap_free(tmpsoap); //  detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -538,7 +538,7 @@ int getBoxFilter(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -590,7 +590,7 @@ int getBoxFilterSGS(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -642,7 +642,7 @@ int getBoxFilterSGSscalar(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -694,7 +694,7 @@ int getBoxFilterSGSvector(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -746,7 +746,7 @@ int getBoxFilterSGSsymtensor(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -798,7 +798,7 @@ int getBoxFilterSGStensor(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -854,7 +854,7 @@ int getBoxFilterGradient(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -896,7 +896,7 @@ int getVelocityAndPressureSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -938,7 +938,7 @@ int getPressureHessianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -980,7 +980,7 @@ int getVelocityGradientSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1022,7 +1022,7 @@ int getMagneticFieldGradientSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1064,7 +1064,7 @@ int getVectorPotentialGradientSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1106,7 +1106,7 @@ int getPressureGradientSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1148,7 +1148,7 @@ int getVelocityHessianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1190,7 +1190,7 @@ int getVelocityLaplacianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1232,7 +1232,7 @@ int getMagneticFieldHessianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1274,7 +1274,7 @@ int getMagneticFieldLaplacianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1316,7 +1316,7 @@ int getVectorPotentialHessianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1358,7 +1358,7 @@ int getVectorPotentialLaplacianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1401,7 +1401,7 @@ int nullOp(char *authToken, int count,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1443,7 +1443,7 @@ int getForce(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1499,7 +1499,7 @@ int getPosition(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -1565,7 +1565,7 @@ int getRawVelocity(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); //  detach the gSOAP environment
+	soap_free(tmpsoap); //  detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1608,7 +1608,7 @@ int getMagneticFieldSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  //remove deserialized data and clean up
-	soap_done(tmpsoap); //detach the gSOAP environment
+	soap_free(tmpsoap); //detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1660,7 +1660,7 @@ int getRawMagneticField(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); // detach the gSOAP environment
+	soap_free(tmpsoap); // detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1703,7 +1703,7 @@ int getVectorPotentialSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); //  detach the gSOAP environment
+	soap_free(tmpsoap); //  detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1755,7 +1755,7 @@ int getRawVectorPotential(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); // detach the gSOAP environment
+	soap_free(tmpsoap); // detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1799,7 +1799,7 @@ int getPressureSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); // detach the gSOAP environment
+	soap_free(tmpsoap); // detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1850,7 +1850,7 @@ int getRawPressure(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); // detach the gSOAP environment
+	soap_free(tmpsoap); // detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1893,7 +1893,7 @@ int getDensitySoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); // detach the gSOAP environment
+	soap_free(tmpsoap); // detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -1936,7 +1936,7 @@ int getDensityGradientSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -1978,7 +1978,7 @@ int getDensityHessianSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 	return rc;
@@ -2023,7 +2023,7 @@ int getInvariantSoap(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  /* remove deserialized data and clean up */
-	soap_done(tmpsoap); /*  detach the gSOAP environment  */
+	soap_free(tmpsoap); /*  detach the gSOAP environment  */
 
 	__turblib_errno = rc;
 
@@ -2080,7 +2080,7 @@ int getRawDensity(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); // detach the gSOAP environment
+	soap_free(tmpsoap); // detach the gSOAP environment
 
 	__turblib_errno = rc;
 
@@ -2139,7 +2139,7 @@ int getCutout(char *authToken,
 
 	soap_destroy(tmpsoap);
 	soap_end(tmpsoap);  // remove deserialized data and clean up
-	soap_done(tmpsoap); // detach the gSOAP environment
+	soap_free(tmpsoap); // detach the gSOAP environment
 
 	__turblib_errno = rc;
 
